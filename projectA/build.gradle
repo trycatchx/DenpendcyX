@@ -1,0 +1,6 @@
+
+// module 生成 aar，最终的变量目的位置也是放在 default 的 config 里面的 artifacts
+configurations.maybeCreate("default")
+artifacts.add("default", file('lib-aar-local.aar'))
+
+

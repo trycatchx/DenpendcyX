@@ -1,0 +1,36 @@
+apply from: "common.gradle"
+apply from: "config.gradle"
+
+buildscript {
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        mavenCentral()
+        google()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "${rootDir}/repo" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20'
+    }
+}
+
+allprojects {
+
+    repositories {
+        flatDir {
+            dirs project(':projectA').file('libs')
+            dirs getRootProject().file('.rocketxcache')
+        }
+
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        mavenCentral()
+        google()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "${rootDir}/repo" }
+    }
+
+}
+

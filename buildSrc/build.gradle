@@ -1,0 +1,22 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version "1.4.20"
+}
+
+
+dependencies {
+    implementation gradleApi()
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.20"
+    implementation 'com.android.tools.build:gradle:4.0.2'
+    implementation("org.apache.poi:poi-ooxml:5.1.0")
+
+
+}
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+    google()
+    mavenCentral()
+    gradlePluginPortal()
+}
+
